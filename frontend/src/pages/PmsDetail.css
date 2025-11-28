@@ -1,0 +1,275 @@
+.pms-detail-layout {
+  flex: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 270px minmax(800px, 1fr);
+  gap: 20px;
+  padding: 18px;
+  height: auto;  
+
+  box-sizing: border-box;
+}
+
+.pms-left-panel {
+
+  width: 100%;
+  overflow-y: auto;
+  padding-right: 8px;
+  box-sizing: border-box;
+}
+
+.lot-info-wrap {
+  background: var(--card-dark);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+
+}
+
+.lot-info-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.lot-horizontal-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.lot-horizontal-group .lot-fieldset {
+  flex: 1;
+}
+
+.lot-fieldset {
+  border: 1px solid rgba(0,0,0,0.12);
+  background:var(--card-light);
+  backdrop-filter: blur(8px);
+  border-radius: 7px;
+
+  padding: 2px 15px;
+  margin-bottom: 6px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lot-fieldset legend {
+  font-size: 0.70rem;
+  opacity: 0.65;
+  padding: 0 4px;
+  color: var(--text-dark);
+}
+
+.lot-value {
+  font-size: 0.8rem;
+  padding: 3px 0;
+  font-weight: 700;
+  color: var(--text-dark);
+
+  white-space: normal;        
+  word-wrap: break-word;     
+  overflow-wrap: anywhere;   
+}
+
+.sorter-fieldset {
+  padding: 0 15px;
+}
+
+.sorter-divider {
+  border-bottom: 1px solid rgba(251, 11, 11, 0.25);  
+
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-icon-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.view-icon {
+  flex: 1;
+  text-align: center;
+  padding: 7px 5px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-dark);
+  background:var(--card-dark);
+  transition: 0.2s ease;
+}
+
+.view-icon:hover {
+  background:var(--card-light);
+}
+
+.view-icon.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.pms-heatmap-title {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center; 
+}
+
+.heatmap-container {
+  margin-top: 10px;
+}
+
+.pms-right-panel {
+  background: var(--card-light);
+  min-width: 1000px;
+  border-radius: 5px;
+  height: auto;
+  padding: 8px 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  border: 2px solid var(--border-color);
+}
+
+.pms-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.pms-modal-image {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+.heatmap-rnd .react-rnd-resize-handle-bottomRight {
+  background: rgba(255,255,255,0.6) !important;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 4px;
+}
+
+.heatmap-set-box{
+  background: var(--card-dark);
+  padding: 0.1rem 1rem 1rem 1rem;
+  border-radius: 9px;
+  margin-bottom: 2px;
+  z-index: 99999; 
+}
+
+.inline-filter-box {
+  margin-top: 6px;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.inline-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.summary-split-layout {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.summary-left-box {
+  width: 50%;
+
+}
+
+.summary-right-box {
+  width: 50%;
+  position: relative;
+}
+
+.table-topbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 6px 6px;
+  background: var(--bg-panel);
+}
+
+.row-count {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.topbar-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+}
+
+.pms-right-panel {
+  background: var(--card-light);
+  min-width: 1000px;
+  border-radius: 5px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  border: 2px solid var(--border-color);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;     /* 전체 높이 고정 */
+  overflow-y: auto;  /* 오른쪽 패널 스크롤 유지 */
+  overflow-x: hidden;
+}
+
+.excel-scroll-container {
+  flex: 1;
+  overflow-y: auto;   /* 스크롤 실제 발생 */
+  overflow-x: hidden;
+}
+
+.excel-table-container {
+  width: 100%;
+}
+
+.excel-wrapper {
+  height: auto;
+}
+
+th .excel_th {
+  position: sticky;
+  top: 0;
+  background: var(--bg-panel);
+  z-index: 10;
+}
+
+.view-icon.disabled {
+  pointer-events: none;   
+  cursor: default;
+}
+

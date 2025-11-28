@@ -1,0 +1,1 @@
+from .inspection_result import inspection_result

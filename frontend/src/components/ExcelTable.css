@@ -1,0 +1,272 @@
+.excel-wrapper {
+  width: 100%;
+  height: 100%;
+  
+  overflow-y: auto;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+  position: relative;
+  scrollbar-width: none;
+}
+
+.excel-table {
+  width: 100%;
+  /* border-collapse: collapse; */
+  font-size: 0.85rem;
+  table-layout: fixed;
+  position: relative;
+  
+}
+
+.excel-th {
+  background: #eef3f8;
+  padding: 6px;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-right: 1px solid #ddd;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.excel-td {
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #ddd;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: text;  
+  text-overflow: ellipsis;
+}
+
+.excel-row:hover .excel-td {
+  background: #f4f8fd;
+}
+
+.excel-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; 
+}
+
+.excel-filter-wrapper {
+  position: relative;
+
+}
+
+.excel-filter-icon {
+  flex-shrink: 0;       
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #666;
+}
+.excel-filter-icon.filtered {
+  color: #0b61d8;
+  font-weight: 900;
+}
+
+.excel-filter-dropdown {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  min-width: 150px;
+  z-index: 99999;
+  padding: 6px 8px;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+.excel-filter-option {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.excel-filter-divider {
+  height: 1px;
+  background: #ddd;
+  margin: 6px 0;
+}
+
+.excel-filter-list {
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.excel-header-title {
+  flex: 1 1 auto;        
+  overflow: hidden;      
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: flex;
+  align-items: center;  
+  justify-content: space-between; 
+}
+
+.resize-handle {
+  position: absolute;
+  right: -7px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+  background: transparent;
+}
+
+.resize-handle.active {
+  background: #bbb;
+}
+
+.value-count-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+}
+
+.value-count-modal {
+  background: var(--card-dark);
+  padding: 22px;
+  border-radius: 12px;
+  width: 360px;
+  max-height: 60vh;
+  overflow-y: auto;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  animation: pop 0.17s ease-out;
+}
+
+@keyframes pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.vcm-title {
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.vcm-list {
+  border-top: 1px solid #5555;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.vcm-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #3333;
+}
+
+.vcm-key {
+  color: var(--text-normal);
+}
+
+.vcm-count {
+  color: var(--text-accent);
+  font-weight: 700;
+}
+
+.vcm-close-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 8px 0;
+  background: #444;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.vcm-close-btn:hover {
+  background: #666;
+}
+
+.total-row-top {
+
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.vcm-separator {
+  margin: 2px 0;
+  border-bottom: 2px solid #7775;
+}
+
+
+.excel-wrapper.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+
+.excel-filter-dropdown {
+  position: absolute;
+}
+
+
+.excel-filter-dropdown.excel-filter-portal {
+  position: fixed !important;
+  transform: translate(0, 0);
+  min-width: 170px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  padding: 10px;
+  z-index: 9999999;
+}
+
+.sort-icon {
+  flex-shrink: 0;       
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #666;
+}
+
+.sort-icon svg{
+  align-items: center;
+}
+
+.sort-icon:hover {
+  opacity: 0.8;
+}
+
+.sort-icon.active {
+  color: #2563eb;
+  font-weight: bold;
+  opacity: 1;
+}
